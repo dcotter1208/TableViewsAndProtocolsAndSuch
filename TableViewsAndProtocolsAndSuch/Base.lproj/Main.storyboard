@@ -3,9 +3,10 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Zoo AnimalsTVC-->
+        <!--Detroit Zoo-->
         <scene sceneID="dIh-SZ-GPS">
             <objects>
                 <tableViewController id="SkH-I0-2yU" customClass="ZooAnimalsTVC" sceneMemberID="viewController">
@@ -31,7 +32,7 @@
                             <outlet property="delegate" destination="SkH-I0-2yU" id="8El-25-YzR"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="kbj-KG-7pr">
+                    <navigationItem key="navigationItem" title="Detroit Zoo" id="kbj-KG-7pr">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="GLq-B3-ddG">
                             <connections>
                                 <segue destination="JDI-fr-buu" kind="push" id="z9j-uT-cpG"/>
@@ -109,18 +110,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="animal" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O9c-An-goN">
-                                <rect key="frame" x="20" y="118" width="280" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="animal" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O9c-An-goN">
+                                <rect key="frame" x="20" y="259" width="280" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="qMQ-3J-kqC"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="type" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2YN-7T-dY2">
-                                <rect key="frame" x="20" y="169" width="280" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="type" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2YN-7T-dY2">
+                                <rect key="frame" x="20" y="310" width="280" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="IUP-HV-GUt"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fwn-Aq-CJk">
-                                <rect key="frame" x="121" y="282" width="79" height="30"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="detroitZooLogo" translatesAutoresizingMaskIntoConstraints="NO" id="6ls-q6-HhR">
+                                <rect key="frame" x="40" y="72" width="240" height="128"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fwn-Aq-CJk">
+                                <rect key="frame" x="121" y="365" width="79" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="9KQ-86-XJ0"/>
+                                </constraints>
                                 <state key="normal" title="Add To Zoo"/>
                                 <connections>
                                     <action selector="addAnimalToZoo:" destination="JDI-fr-buu" eventType="touchUpInside" id="Cz5-Qh-6km"/>
@@ -129,6 +142,20 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="O9c-An-goN" firstAttribute="leading" secondItem="zYv-0s-LQJ" secondAttribute="leadingMargin" constant="4" id="4Mf-KZ-u6Y"/>
+                            <constraint firstItem="Fwn-Aq-CJk" firstAttribute="top" secondItem="2YN-7T-dY2" secondAttribute="bottom" constant="25" id="90t-qv-oGh"/>
+                            <constraint firstItem="2YN-7T-dY2" firstAttribute="centerX" secondItem="Fwn-Aq-CJk" secondAttribute="centerX" id="LlC-rV-qo0"/>
+                            <constraint firstItem="gOh-3B-9e0" firstAttribute="top" secondItem="Fwn-Aq-CJk" secondAttribute="bottom" constant="173" id="PPZ-Cz-gnb"/>
+                            <constraint firstItem="6ls-q6-HhR" firstAttribute="centerX" secondItem="O9c-An-goN" secondAttribute="centerX" id="USD-EQ-zyQ"/>
+                            <constraint firstItem="O9c-An-goN" firstAttribute="trailing" secondItem="2YN-7T-dY2" secondAttribute="trailing" id="UhQ-1r-dZu"/>
+                            <constraint firstItem="2YN-7T-dY2" firstAttribute="top" secondItem="O9c-An-goN" secondAttribute="bottom" constant="21" id="feP-MK-HJE"/>
+                            <constraint firstItem="6ls-q6-HhR" firstAttribute="top" secondItem="cf6-bU-Mot" secondAttribute="bottom" constant="8" symbolic="YES" id="hqj-8j-Q0x"/>
+                            <constraint firstItem="6ls-q6-HhR" firstAttribute="centerX" secondItem="zYv-0s-LQJ" secondAttribute="centerX" id="q6F-kl-tdE"/>
+                            <constraint firstItem="O9c-An-goN" firstAttribute="leading" secondItem="2YN-7T-dY2" secondAttribute="leading" id="rXv-VH-hxq"/>
+                            <constraint firstItem="6ls-q6-HhR" firstAttribute="leading" secondItem="zYv-0s-LQJ" secondAttribute="leadingMargin" constant="24" id="wKp-EC-Wa9"/>
+                            <constraint firstItem="O9c-An-goN" firstAttribute="top" secondItem="6ls-q6-HhR" secondAttribute="bottom" constant="59" id="xAT-z3-Ids"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="cHW-Ik-jSq"/>
                     <connections>
@@ -160,4 +187,7 @@
             <point key="canvasLocation" x="197.86666666666667" y="376.77333333333331"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="detroitZooLogo" width="346" height="118"/>
+    </resources>
 </document>
