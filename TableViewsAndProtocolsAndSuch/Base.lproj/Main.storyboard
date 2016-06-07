@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="blY-eN-JnC">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--Zoo AnimalsTVC-->
+        <scene sceneID="dIh-SZ-GPS">
+            <objects>
+                <tableViewController id="SkH-I0-2yU" customClass="ZooAnimalsTVC" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="ilg-pn-RZy">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cell" id="hjX-eI-j1D">
+                                <rect key="frame" x="0.0" y="92" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hjX-eI-j1D" id="F8z-Qz-yGM">
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="NYF-sH-8al" kind="push" identifier="animalInteractionSegue" id="4k7-Yb-yC6"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="SkH-I0-2yU" id="RxY-oD-Y7p"/>
+                            <outlet property="delegate" destination="SkH-I0-2yU" id="8El-25-YzR"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="kbj-KG-7pr">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="GLq-B3-ddG">
+                            <connections>
+                                <segue destination="JDI-fr-buu" kind="push" id="z9j-uT-cpG"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NbW-DH-7iP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="591" y="376"/>
+        </scene>
+        <!--Animal InteractionVC-->
+        <scene sceneID="D9Q-py-NFo">
+            <objects>
+                <viewController id="NYF-sH-8al" customClass="AnimalInteractionVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="OMr-jf-dQ3"/>
+                        <viewControllerLayoutGuide type="bottom" id="s0T-KO-aOC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="DwU-Qf-rKf">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3nO-hJ-XLh">
+                                <rect key="frame" x="69" y="458" width="69" height="30"/>
+                                <state key="normal" title="Feed"/>
+                                <connections>
+                                    <action selector="feedAnimalPressed:" destination="NYF-sH-8al" eventType="touchUpInside" id="Dn7-v3-fWY"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J12-Lv-WRS">
+                                <rect key="frame" x="182" y="458" width="69" height="30"/>
+                                <state key="normal" title="Play"/>
+                                <connections>
+                                    <action selector="playWithAnimalPressed:" destination="NYF-sH-8al" eventType="touchUpInside" id="56i-2q-7Pa"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mNe-19-jNa">
+                                <rect key="frame" x="20" y="124" width="280" height="265"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J1q-l0-4Na">
+                                <rect key="frame" x="20" y="83" width="280" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="food" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="59B-QX-4IE">
+                                <rect key="frame" x="20" y="412" width="280" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="zSu-xB-5ra"/>
+                    <connections>
+                        <outlet property="animalImage" destination="mNe-19-jNa" id="g0H-oH-sbZ"/>
+                        <outlet property="animalNameLabel" destination="J1q-l0-4Na" id="FpJ-nP-GOM"/>
+                        <outlet property="foodTF" destination="59B-QX-4IE" id="I7j-eZ-5nH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K4R-C2-33z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1052" y="682"/>
+        </scene>
+        <!--Add AnimalVC-->
+        <scene sceneID="sd1-kd-pWi">
+            <objects>
+                <viewController id="JDI-fr-buu" customClass="AddAnimalVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cf6-bU-Mot"/>
+                        <viewControllerLayoutGuide type="bottom" id="gOh-3B-9e0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zYv-0s-LQJ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="animal" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O9c-An-goN">
+                                <rect key="frame" x="20" y="118" width="280" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="type" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2YN-7T-dY2">
+                                <rect key="frame" x="20" y="169" width="280" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fwn-Aq-CJk">
+                                <rect key="frame" x="121" y="282" width="79" height="30"/>
+                                <state key="normal" title="Add To Zoo"/>
+                                <connections>
+                                    <action selector="addAnimalToZoo:" destination="JDI-fr-buu" eventType="touchUpInside" id="Cz5-Qh-6km"/>
+                                    <segue destination="54d-MD-LcL" kind="unwind" unwindAction="unwindSegue:" id="BNs-IF-MMy"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="cHW-Ik-jSq"/>
+                    <connections>
+                        <outlet property="animalNameTF" destination="O9c-An-goN" id="HTE-zC-LHc"/>
+                        <outlet property="animalTypeTF" destination="2YN-7T-dY2" id="Dl0-32-hcP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jbr-zO-jWd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="54d-MD-LcL" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1052" y="47"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="MeN-sK-Cnb">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="blY-eN-JnC" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="efZ-eS-WTd">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="SkH-I0-2yU" kind="relationship" relationship="rootViewController" id="1bu-ou-gOC"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cGT-tV-msu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="197.86666666666667" y="376.77333333333331"/>
+        </scene>
+    </scenes>
+</document>
